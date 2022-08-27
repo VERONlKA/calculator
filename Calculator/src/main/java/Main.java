@@ -44,7 +44,7 @@ public class Main {
                 case 3:
                     System.out.println("Input id of expression");
                     idexp = scan.nextLine();
-                    query = ("SELECT * FROM expression ORDER BY idexpression;");
+                    query = ("SELECT * FROM expression HAVING idexpression = '" + idexp + "' ;");
                     rs = statement.executeQuery(query);
                     if (rs.next()) {
                         String output = rs.getString("expression");
@@ -92,7 +92,8 @@ public class Main {
                                break;}
 
                            }while(j<8);
-
+                default:
+                    break;
             } } catch (Exception e) {
                         e.printStackTrace();
             }
